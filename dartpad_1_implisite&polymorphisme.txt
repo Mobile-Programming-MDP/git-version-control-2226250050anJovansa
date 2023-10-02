@@ -1,0 +1,98 @@
+
+1
+//implisite Interface
+2
+class Flyable{
+3
+  void fly(){}
+4
+}
+5
+​
+6
+class Animal{
+7
+  String name='';
+8
+  int age=0;
+9
+  double weight=0;
+10
+  
+11
+  Animal(this.name,this.age,this.weight);
+12
+  
+13
+  void eat(){
+14
+    print('$name is eating.');
+15
+    weight = weight + 0.2;
+16
+  }
+17
+  
+18
+  void sleep(){
+19
+    print('$name is Sleeping.');
+20
+  }
+21
+}
+22
+​
+23
+class Bird extends Animal implements Flyable{
+24
+  String featherColor;
+25
+  
+26
+  Bird(String name,int age,double weight,this.featherColor)
+27
+    :super(name,age,weight);
+28
+  
+29
+  //polymorphisme
+30
+  @override
+31
+  void fly(){
+32
+    print('$name is flying');
+33
+  }
+34
+}
+35
+​
+36
+void main(){
+37
+  var mdpBird = Bird('Gagak',2,0.7,'Black');
+38
+  
+39
+  mdpBird.fly();
+40
+  print('Berat Burung: ${mdpBird.weight}');
+41
+  mdpBird.eat();
+42
+  print('Berat Burung: ${mdpBird.weight}');
+43
+}
+Console
+Gagak is flying
+Berat Burung: 0.7
+Gagak is eating.
+Berat Burung: 0.8999999999999999
+Documentation
+keyboard
+Privacy notice Send feedback
+no issues
+Based on Flutter 3.13.4 Dart SDK 3.1.2
+info

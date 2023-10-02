@@ -1,0 +1,44 @@
+void main() {
+  var mobil1 = Mobil('Toyota',2022,4);
+  
+  mobil1.infoKendaraan();
+  mobil1.infoMobil();
+}
+/*
+class Mobil{
+  String merek; //property/atribut
+  String model;
+  int tahunProduksi;
+  
+  //constructor
+  Mobil(this.merek,this.model,this.tahunProduksi);
+  
+  //method
+  void infoMobil(){
+    print('$merek $model, Tahun: $tahunProduksi');
+  }
+}
+*/
+
+class Kendaraan{
+  String merek;
+  int tahunProduksi;
+  
+  Kendaraan(this.merek,this.tahunProduksi);
+  
+  void infoKendaraan() {
+    print('Kendaraan $merek, Tahun:$tahunProduksi');
+  }
+}
+
+class Mobil extends Kendaraan{
+  int jumlahPintu;
+  
+  //constructor
+  Mobil(String merek,int tahunProduksi,this.jumlahPintu):super(merek,tahunProduksi);
+  
+  //method
+  void infoMobil(){
+    print('Mobil $merek, Tahun:$tahunProduksi, Pintu:$jumlahPintu');
+  }
+}
